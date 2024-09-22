@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Vashundhra Beauty Collection</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTX8r7r5BQfD5Qw7jZW7bB8j5CXO4+9SxP4rD/9oS5wLHQrKPKhJuUzX+g8kEAb1grQF8JZlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <!-- Header (Same as Homepage) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.png" alt="VBC Logo"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/cart"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Catalogue -->
+    <section class="product-catalogue">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="filters">
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="beauty">Beauty Products</option>
+                    <option value="household">Household Items</option>
+                </select>
+            </div>
+            <div class="product-grid">
+                <% products.forEach(function(product) { %>
+                    <div class="product-card">
+                        <img src="/images/<%= product.image %>" alt="<%= product.name %>">
+                        <h3><%= product.name %></h3>
+                        <p>₹<%= product.price %></p>
+                        <a href="/products/<%= product._id %>" class="btn btn-secondary">View Details</a>
+                        <button class="btn btn-add-to-cart" data-id="<%= product._id %>">Add to Cart</button>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/about">About Us</a>
+                <a href="/products">Products</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 Vashundhra Beauty Collection. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main5.js"></script>
+</body>
+</html>
